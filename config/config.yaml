@@ -12,9 +12,11 @@ alerts:
     webhook_url: https://hooks.slack.com/services/VOTRE/WEBHOOK/URL
 export:
   csv: true
-  db_path: data/results/immobilier.db
   excel: true
   sqlite: true
+  db_path: data/results/immobilier.db
+  retention_days: 7          # Fichiers CSV/Excel/JSON plus vieux que N jours supprimés
+                             # automatiquement au démarrage du pipeline. Mettre 0 pour désactiver.
 demo:
   nb_annonces: 12        # Nombre d'annonces en mode démo (min 1, max illimité)
                          # Au-delà de 12, des annonces synthétiques sont générées
